@@ -18,7 +18,7 @@ export const LoginApp = () => {
     const calcDetails = () => {
         console.log(username);
         console.log(pwd)
-        setOutput(username === 'test@gmail.com' && pwd === '123456789' ? 'Login successful' : 'Login Failed. Try again!!!');
+        setOutput(username === 'test@gmail.com' && pwd === '12345678' ? 'Login successful' : 'Login Failed. Try again!!!');
     };
 
     return <div>
