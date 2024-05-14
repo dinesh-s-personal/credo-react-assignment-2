@@ -4,14 +4,24 @@ export const LoginWithUseRefApp = () => {
 
     const inputUserName = React.useRef();
     const inputPwd = React.useRef();
+    const lblResult = React.useRef();
 
     const [outputDtls, setOutput] = React.useState('');
 
     const calcDetails = () => {
         // console.log(inputUserName.current.value);
         // console.log(inputPwd.current.value);
-        setOutput(inputUserName.current.value === 'test@gmail.com' 
-                        && inputPwd.current.value === '12345678' ? 'Login successful' : 'Login Failed. Try again!!!');
+        if (inputUserName.current.value === 'test@gmail.com' 
+                && inputPwd.current.value === '12345678')
+        {
+            setOutput('Login successful');
+            lblResult.current.style.color = 'green';
+        }
+        else
+        {
+            setOutput('Login Failed. Try again!!!');
+            lblResult.current.style.color = 'red';
+        }
         inputUserName.current.value = '';
         inputPwd.current.value = '';
     };
@@ -44,7 +54,7 @@ export const LoginWithUseRefApp = () => {
             <button type="submit" className="button">Login</button>
             <br />
             <br />
-            <label>{outputDtls}</label>
+            <label ref={lblResult}>{outputDtls}</label>
         </form>
     </div>
 }

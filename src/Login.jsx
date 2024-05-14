@@ -4,6 +4,7 @@ export const LoginApp = () => {
 
     const [username, setUsername] = React.useState('');
     const [pwd, setPwd] = React.useState('');
+    const [outputDtls, setOutput] = React.useState('');
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -12,8 +13,6 @@ export const LoginApp = () => {
     const handlePwdChange = (e) => {
         setPwd(e.target.value);
     };
-
-    const [outputDtls, setOutput] = React.useState('');
 
     const calcDetails = () => {
         console.log(username);
